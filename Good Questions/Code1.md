@@ -42,3 +42,34 @@ def question2-alternate(N,a,b,c,d):
             req.append(t1)
     return req
 ```
+
+```py
+def question3(str):
+    variables = []
+    operation = []
+    for i in str:
+        if not i.isalpha() and len(variables) < 2:
+            variables.append(i)
+        elif i.isalpha() and len(operation) < 1:
+            operation.append(i)
+        if len(variables) == 2 and len(operation) == 1:
+            if operation[0] == 'A':
+                temp = int(variables[0]) & int(variables[1])
+                variables = [temp]
+                operation = []
+                print(temp)
+            elif operation[0] == 'B':
+                temp = int(variables[0]) | int(variables[1])
+                variables = [temp]
+                operation = []
+                print(temp)
+            elif operation[0] == 'C':
+                temp = int(variables[0]) ^ int(variables[1])
+                variables = [temp]
+                operation = []
+                print(temp)
+    return variables[0]
+
+
+print(question3("1A0B1C1"))
+```
