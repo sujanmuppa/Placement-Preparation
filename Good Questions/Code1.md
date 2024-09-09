@@ -73,3 +73,12 @@ def question3(str):
 
 print(question3("1A0B1C1"))
 ```
+```py
+def makePalindrome(s):
+    if s == s[::-1]:
+        return s
+    for i in range(len(s)):
+        if s[i] != s[-1-i]:
+            return s + s[-1-i::-1]
+    return s
+```
